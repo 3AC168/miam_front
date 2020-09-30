@@ -1,15 +1,35 @@
-import React from 'react';
+import React, { Component } from 'react';
 import Home from './components/Home';
-class App extends React.Component{
-  render(){
+// import Utilisateur from './components/core/Utilisateur';
+// import Ingredients from './components/core/Ingredients';
+
+
+class App extends Component {
+
+  constructor(props){
+    super(props); 
+    this.state = {
+      Utilisateur : []
+    };
+  }
+ 
+
+  render (){
     return(
-      <div>
-        {/* <h1>Go ahead</h1>  */}
-        <Home />
+    <div>
+      <Home />
+      <div className="container-fluid" >
+        <div className="row">
+         
+          
+          {/* <Utilisateur/>
+          <Ingredients/> */}
+        </div>
       </div>
+    </div>
+
     );
   }
-
 }
 
 export default App;

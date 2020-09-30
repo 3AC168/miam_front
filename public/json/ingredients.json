@@ -1,0 +1,28 @@
+{
+    "success": true,
+    "data": [{
+        "_id": "abc",
+        "name": "Agneau"
+    }, {
+        "_id": "def",
+        "name": "Boeuf"
+    }, {
+        "_id": "ghi",
+        "name": "Porc"
+    }, {
+        "_id": "jkl",
+        "name": "Poulet"
+    }, {
+        "_id": "mno",
+        "name": "Brocoli"
+    }, {
+        "_id": "pqr",
+        "name": "Carotte"
+    }, {
+        "_id": "stu",
+        "name": "Choux"
+    }, {
+        "_id": "vwx",
+        "name": "Courgette"
+    }]
+}
