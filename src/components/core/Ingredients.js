@@ -1,5 +1,7 @@
 import React, { Component } from 'react';
 import { Card, Button, Form, ListGroup, Modal } from 'react-bootstrap';
+import IngredientsAdd from '../form/select/IngredientsAdd';
+//import Quantities from './Quantities';
 
 class Ingredients extends Component {
     state = {
@@ -32,9 +34,11 @@ class Ingredients extends Component {
                 </ListGroup>
                 </Card>
 
-                <hr />
+                <hr /> 
 
-                <Card style={{ width: '18rem' }}>
+                <IngredientsAdd />
+
+                {/*<Card style={{ width: '18rem' }}>
                 <Card.Header>Ingrédients à ajouter : </Card.Header>
                 <ListGroup variant="flush">
                     <Form.Group>
@@ -47,14 +51,14 @@ class Ingredients extends Component {
                 </ListGroup>
                 </Card>
 
-                <Button variant="info" type="submit">Ajouter</Button>
+                <Button variant="info" type="submit">Ajouter</Button>*/}
                                 
 
-                <Button variant="primary" onClick={this.handleShow}>
+                {/*<Button variant="primary" onClick={this.handleShow}>
                     Launch demo modal
-                </Button>
+                 </Button>*/}
 
-                <Modal show={this.state.show} onHide={this.state.handleClose}>
+                {/*<Modal show={this.state.show} onHide={this.state.handleClose}>
                     <Modal.Header closeButton>
                     <Modal.Title>Modal heading</Modal.Title>
                     </Modal.Header>
@@ -67,7 +71,7 @@ class Ingredients extends Component {
                         Save Changes
                     </Button>
                     </Modal.Footer>
-                </Modal>
+                </Modal>*/}
             </div>
         );
     }

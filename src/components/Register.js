@@ -28,7 +28,7 @@ class Register extends React.Component{
   }
   handleSubmit(event) {
     console.log("submited",);
-    // here we nee to communicate with ouside server
+    // here we need to communicate with ouside server
     // get.post('htpps://localhost:3000/rehistration')
     event.preventDefault();
   }
