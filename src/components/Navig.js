@@ -9,9 +9,9 @@ class Navig extends React.Component{
             <Navbar.Brand href="#home">Miam</Navbar.Brand>
             <Navbar.Toggle aria-controls="responsive-navbar-nav" />
             <Navbar.Collapse id="responsive-navbar-nav">
-                <Nav className="mr">
+                <Nav className="ml-auto">
                 <Nav.Link href="#Login">Se connecter</Nav.Link>
-                <Nav.Link eventKey={2} href="/Register.js">
+                <Nav.Link  href="/register">
                     s'inscrire
                 </Nav.Link>
                 </Nav>

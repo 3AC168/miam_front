@@ -38,7 +38,7 @@ class Login extends React.Component{
             </Form.Group>
             <Form.Group controlId="formGroupPassword">
                 <Form.Label >Password</Form.Label>
-                <Form.Control type="password" name='paswword' placeholder="Password" 
+                <Form.Control type="password" name='password' placeholder="Password" 
                 value={this.state.password} onChange={this.handleChange} required />
             </Form.Group>
             <Button variant="primary" type="submit" >Se connecter</Button>

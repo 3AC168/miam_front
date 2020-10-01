@@ -1,5 +1,6 @@
 import React from 'react';
 import {Form,Button }from 'react-bootstrap';
+import Navig from './Navig';
 
 class Register extends React.Component{
   constructor(props){
@@ -27,11 +28,14 @@ class Register extends React.Component{
   }
   handleSubmit(event) {
     console.log("submited",);
+    // here we nee to communicate with ouside server
+    // get.post('htpps://localhost:3000/rehistration')
     event.preventDefault();
   }
   render(){
     return(
       <div>
+        <Navig />
  <Form onSubmit={this.handleSubmit}>
    <h1>Inscription </h1>
             <Form.Group controlId="formGroupEmail" >
