@@ -27,7 +27,7 @@ class App extends Component {
           {/*<IngredientsAdd />*/}
           
           {/*<Utilisateur/>*/}          
-          {/*<Ingredients/>*/}
+          <Ingredients/>
       </div>
     </div>
 
