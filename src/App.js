@@ -3,7 +3,7 @@ import React, { Component } from 'react';
 import Utilisateur from './components/core/Utilisateur';
 import Ingredients from './components/core/Ingredients';
 import IngredientsAdd from './components/form/select/IngredientsAdd';
-import Navig from './components/Navig';
+import Navigation from './components/Navigation';
 
 
 class App extends Component {
@@ -23,8 +23,9 @@ class App extends Component {
     <div>
       {/*<Home />*/}
       <div className="container-fluid" >
-          <Navig />
-          {/*<IngredientsAdd />*/}
+          <Navigation />
+          {/*<IngredientsAdd />*/}      
+        
           
           {/*<Utilisateur/>*/}          
           <Ingredients/>
