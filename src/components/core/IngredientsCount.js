@@ -1,15 +1,18 @@
 import React, { Component } from 'react';
 import { Card, Button, Form, ListGroup, Modal } from 'react-bootstrap';
-import IngredientsAdd from '../form/select/IngredientsAdd';
-//import Quantities from './Quantities';
+import Ingredients from '../form/select/Ingredients';
+import Quantities from './Quantities';
 
-class Ingredients extends Component {
+class IngredientsCount extends Component {
+    
     state = {
         form: true,
         show: false, // Alerte show
         handleClose: false,
         handleShow: true
     };
+
+
 
     handleClose() {
         this.setState({
@@ -25,39 +28,30 @@ class Ingredients extends Component {
     render() {
         return(
             <div>
-                <Card style={{ width: '18rem' }}>
-                <Card.Header>Ingrédients restants</Card.Header>
-                <ListGroup variant="flush">
-                    <ListGroup.Item>Poulet : 1 pièce</ListGroup.Item>
-                    <ListGroup.Item>Carotte : 1 kg</ListGroup.Item>
-                    <ListGroup.Item>Oignon : 1 kg</ListGroup.Item>
-                </ListGroup>
-                </Card>
-
-                <hr /> 
-
-                <IngredientsAdd />
-
                 {/*<Card style={{ width: '18rem' }}>
-                <Card.Header>Ingrédients à ajouter : </Card.Header>
+                <Card.Header>Liste des ingrédients :</Card.Header>
                 <ListGroup variant="flush">
-                    <Form.Group>
-                        <Form.Control size="lg" type="text" placeholder="Large text" />
-                        <br />
-                        <Form.Control type="text" placeholder="Normal text" />
-                        <br />
-                        <Form.Control size="sm" type="text" placeholder="Small text" />
-                    </Form.Group>
+                    
                 </ListGroup>
-                </Card>
+                </Card>*/}
 
-                <Button variant="info" type="submit">Ajouter</Button>*/}
+                {/*<hr />*/} 
+
+                <Quantities />
+                
+                <Card.Body className="text-center">                        
+                    <Button variant="success" onClick = {this.props.addListFn}>Plus  +</Button> 
+                    <Button variant="danger" onClick = {this.props.removeListFn}>Moins -</Button>
+                </Card.Body>
+                
+                
+                
                                 
 
                 {/*<Button variant="primary" onClick={this.handleShow}>
                     Launch demo modal
                  </Button>*/}
-
+ 
                 {/*<Modal show={this.state.show} onHide={this.state.handleClose}>
                     <Modal.Header closeButton>
                     <Modal.Title>Modal heading</Modal.Title>
@@ -77,5 +71,5 @@ class Ingredients extends Component {
     }
 }
 
-export default Ingredients;
+export default IngredientsCount;
 

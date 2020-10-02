@@ -22,7 +22,7 @@ class Quantities extends Component {
                 <Button variant="outline-secondary" type="submit">Unité</Button>
                 </InputGroup.Append>
                 </InputGroup>
-
+                
             </div>
         );
     }
