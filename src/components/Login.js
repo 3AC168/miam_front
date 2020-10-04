@@ -1,4 +1,5 @@
 import React from 'react';
+// import {Link} from 'react-router-dom';
 import Form from 'react-bootstrap/Form';
 import Button from 'react-bootstrap/Button';
 class Login extends React.Component {
@@ -21,15 +22,18 @@ class Login extends React.Component {
     })
   }
   handleSubmit(event) {
-    // console.log(this.state.email);
+    
     event.preventDefault();
-   
+    console.log(this.state.email);
+    console.log(this.state.password);
+    // <Redirect to="/register"/>;
+  
 
   }
   render() {
     return (
       <div>
-        <Form onSubmit={() => this.handleSubmit()} >
+        <Form onSubmit={this.handleSubmit} >
           <Form.Group controlId="formGroupEmail">
             <Form.Label>Email address</Form.Label>
             <Form.Control type="email" name="email" placeholder="Enter email" 
@@ -38,11 +42,12 @@ class Login extends React.Component {
           <Form.Group controlId="formGroupPassword">
             <Form.Label >Password</Form.Label>
             <Form.Control type="password" name='password' placeholder="Password"
-              value={this.state.password} onChange={(event) => this.handleChange(event)} />
+              value={this.state.password} onChange={this.handleChange} />
           </Form.Group>
-          <Button variant="primary" type="submit" onSubmit={() => this.handleSubmit()}>Se connecter</Button>
+          <Button variant="primary" type="submit" onSubmit={this.handleSubmit}> Se connecter</Button>
         </Form>
       </div>
+      // <Link to="Enregistrement">Se connecter</Link>
     );
   }
 
