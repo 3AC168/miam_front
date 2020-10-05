@@ -108,7 +108,7 @@ class Register extends React.Component{
                       <Form.Group>
                           <Form.File id="exampleFormControlFile1" label="Photos" />
                         </Form.Group>
-                      <Button variant="primary" type="submit" onSubmit={this.handleSubmit} >S'enregistre</Button>
+                      <Button variant="primary" type="submit" onSubmit={this.handleSubmit} >S'inscrire</Button>
                   </Form>
                 </div>
               );

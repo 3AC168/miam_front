@@ -11,10 +11,10 @@ import {
 } from 'react-router-dom'
 // import axios from 'axios';
 import { Card,ListGroup } from 'react-bootstrap';
-// import UserInfo from './components/core/UserInfo';
-// import Utilisateur from './components/core/Utilisateur';
+import UserInfo from './components/core/UserInfo';
+import Utilisateur from './components/core/Utilisateur';
 //import IngredientsCount from './components/core/IngredientsCount';
-//import Ingredients from './components/form/select/Ingredients';
+import Ingredients from './components/form/select/Ingredients';
 import Add from './components/ingredients/Add';
 import Navigation from './components/Navigation';
 
@@ -58,7 +58,7 @@ class App extends Component {
           <div>
             <div className="container-fluid" >
                 <Navigation />
-                <Card style={{ width: '18rem' }}>
+                {/* <Card style={{ width: '18rem' }}>
                     <Card.Header>Liste des ingrédients :</Card.Header>
                       <ListGroup variant="flush">
                         <ul>
@@ -72,7 +72,7 @@ class App extends Component {
                         </ul>
                       </ListGroup>
                 </Card>
-                <Add />
+                <Add /> */}
                 {/*<Add />
                 <Add/>*/}
                 {/*<UserInfo />*/}
@@ -81,10 +81,13 @@ class App extends Component {
                 <Switch>
                     <Route path="/login" component={Login} />
                     <Route path="/register" component={Register} />
-                    <Route path="/enregistrer/:email" component={Enregistrer} />
                     <Route path="/logout" component={Login} />
-
+                    <Route path="/enregistrer/:email" component={Enregistrer} />
+                    <Route path="/userinfo" component={UserInfo} />
+                    <Route path="/utilisateur" component={Utilisateur} />
+                    <Route path="/add" component={Add} />
                 </Switch>
+                <Ingredients />
           </div>
         </Router>
   

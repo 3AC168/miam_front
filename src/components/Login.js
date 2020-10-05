@@ -28,7 +28,7 @@ class Login extends React.Component {
     console.log(this.state.email,this.state.password);
     const password=this.state.password;
     const email=this.state.email;
-    if(this.state.email=="tes" && this.state.password===password){
+    if(this.state.email===email && this.state.password===password){
       this.props.history.push('/enregistrer/' + email);
     }
     else{
