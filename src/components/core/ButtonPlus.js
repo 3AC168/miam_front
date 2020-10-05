@@ -5,7 +5,7 @@ class Button extends Component {
     render (){
         return(
             <div>
-                <button>+{this.props.list.this.addList}</button>
+                <button>Ajouter{this.props.list.this.addList}</button>
             </div>
         );
     }
