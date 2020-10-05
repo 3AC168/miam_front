@@ -11,11 +11,16 @@ class Ingredients extends React.Component {
     };
 
     componentDidMount() {
+<<<<<<< HEAD
         const url = '/json/ingredients.json';
         //const url = 'http://localhost:3003/ingredients'
+=======
+        const url = 'http://localhost:3003/ingredients';
+>>>>>>> e2d836d4b069de569d7918a767516b5694105a2f
         fetch(url)
             .then(res => res.json())
             .then((json) => {
+                console.log(json);
                 this.setState({
                     list: json.data
                 })

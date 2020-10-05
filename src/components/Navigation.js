@@ -29,6 +29,8 @@ class Navigation extends React.Component{
               <Switch>
                 <Route path="/login" component={Login} />
                 <Route path="/register" component={Register} />
+                <Route path="/logout" component={Login} />
+
               </Switch>
         </div>
       </Router>
