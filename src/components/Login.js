@@ -1,6 +1,6 @@
 import React from 'react';
 // import {Link} from 'react-router-dom';
-// import Register from './Register';
+// import Welcome from './Welcome';
 import Form from 'react-bootstrap/Form';
 import Button from 'react-bootstrap/Button';
 class Login extends React.Component {
@@ -29,7 +29,7 @@ class Login extends React.Component {
     const password=this.state.password;
     const email=this.state.email;
     if(this.state.email===email && this.state.password===password){
-      this.props.history.push('/enregistrer/' + email);
+      this.props.history.push('/welcome/' + email);
     }
     else{
       this.setState({
@@ -41,7 +41,7 @@ class Login extends React.Component {
   render() {
     return (
       <div>
-        {this.state.err !='' ? this.state.err:''}
+        {this.state.err !=='' ? this.state.err:''}
         <Form method="post" onSubmit={this.handleSubmit} >
           <Form.Group controlId="formGroupEmail">
             <Form.Label>Email address</Form.Label>

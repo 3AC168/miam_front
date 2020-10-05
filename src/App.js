@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
+import  Home  from './components/Home';
 import Register from './components/Register';
-import Enregistrer from './components/Enregistrer';
+import Welcome from './components/Welcome';
 import Login from './components/Login';
 // import {Navbar,Nav } from 'react-bootstrap';
 import {
@@ -79,15 +80,17 @@ class App extends Component {
                 {/*<Utilisateur />*/}
             </div>
                 <Switch>
+                  <Route exact path="/" component={Home} />
                     <Route path="/login" component={Login} />
                     <Route path="/register" component={Register} />
-                    <Route path="/logout" component={Login} />
-                    <Route path="/enregistrer/:email" component={Enregistrer} />
+                    <Route path="/logout" component={Utilisateur} />
+                    <Route path="/Welcome" component={Welcome } />
                     <Route path="/userinfo" component={UserInfo} />
-                    <Route path="/utilisateur" component={Utilisateur} />
+                    <Route path="/ingredients" component={Ingredients} />
+                    <Route path="/logout" component={Register} />
                     <Route path="/add" component={Add} />
                 </Switch>
-                <Ingredients />
+          
           </div>
         </Router>
   

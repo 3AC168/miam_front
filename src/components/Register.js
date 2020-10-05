@@ -1,5 +1,6 @@
 import React from 'react';
 // import axios from 'axios';
+import Welcome from './Welcome';
 import {Form,Button}from 'react-bootstrap';
 class Register extends React.Component{
   constructor(props){
@@ -28,8 +29,9 @@ class Register extends React.Component{
   handleSubmit() {
     console.log("submited");
     const password=this.state.password;
-    const comnfirmation=this.state.confirmation;
-    if(this.state.password === this.state.confirmation) {
+    const confirmation=this.state.confirmation;
+    if(password === confirmation) {
+      return <Welcome />
       // sendDetailsToServer() 
       
      console.log('Votre inscription a bie été entregistrée'); 
@@ -52,7 +54,7 @@ class Register extends React.Component{
   //       "password":this.state.password,
 
   //     }
-  //     axios.post(url/compnents,payload)
+  //     axios.post('http://localhost:3003/',payload)
   //     .then(response=>{
   //       if(response.status===200){
   //         console.log('regustration copmlte');
@@ -78,7 +80,7 @@ class Register extends React.Component{
   render(){
           return(
                 <div> 
-                  {this.state.err !='' ? this.state.err:''}       
+                  {this.state.err !=='' ? this.state.err:''}       
                   <Form onSubmit={this.handleSubmit}>
                      <h1>Inscription </h1>
                       <Form.Group controlId="formGroupEmail" >

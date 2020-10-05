@@ -1,6 +1,5 @@
 import React from 'react';
 import Register from './Register';
-import Enregistrer from './Enregistrer';
 import Login from './Login';
 import {Navbar,Nav } from 'react-bootstrap';
 import {
@@ -23,7 +22,6 @@ class Navigation extends React.Component{
                     <Nav className="ml-auto">
                       <Nav.Link><Link to="/login"> Se connecter</Link></Nav.Link>
                       <Nav.Link><Link to="/register">s'inscrire </Link></Nav.Link>
-                      <Nav.Link><Link to="/enregister">register </Link></Nav.Link>
                     </Nav>
                   </Navbar.Collapse>
                 </Navbar>
@@ -31,7 +29,6 @@ class Navigation extends React.Component{
               <Switch>
                 <Route path="/login" component={Login} />
                 <Route path="/register" component={Register} />
-                <Route path="/enregistrer/:email" component={Enregistrer} />
                 <Route path="/logout" component={Login} />
 
               </Switch>

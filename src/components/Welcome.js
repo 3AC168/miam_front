@@ -1,7 +1,7 @@
 import React from 'react';
-import Navigation from './Navigation';
+// import Navigation from './Navigation';
 
-class Enregistrer extends React.Component{
+class Welcome extends React.Component{
     logout(){
         this.props.history.push('/logout');
     }
@@ -10,10 +10,10 @@ class Enregistrer extends React.Component{
         return(
            
             <div> 
-              <Navigation />
-              <h1> votr inscription a  bien été enregistrée</h1>
+              {/* <Navigation /> */}
               <h1>Welcome  {email}</h1>
-              <button onClick={this.logout.bind(this)}>Logout</button>
+              <h1> votr inscription a  bien été enregistrée</h1>
+              <button onClick={this.logout.bind(this)}>Utilisateur</button>
            </div>
           
             
@@ -21,4 +21,4 @@ class Enregistrer extends React.Component{
     }
 }
 
-export default Enregistrer;
+export default Welcome;
