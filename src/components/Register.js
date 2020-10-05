@@ -1,6 +1,6 @@
 import React from 'react';
+// import axios from 'axios';
 import {Form,Button}from 'react-bootstrap';
-// import {useHistorR} from 'react-router-dom';
 class Register extends React.Component{
   constructor(props){
     super(props);
@@ -12,7 +12,7 @@ class Register extends React.Component{
       firstName:'',
       lastName:'',
       dateOfBirth:'',
-      errors:''
+      err:''
 
     }
     this.handleSubmit=this.handleSubmit.bind(this);
@@ -20,23 +20,65 @@ class Register extends React.Component{
     
   }
   handleChange(event){
-    // console.log('handlechange',event);
+    event.preventDefault();
     this.setState({
       [event.target.name]:event.target.value,
-  
     })
   }
-  handleSubmit(event) {
-    event.preventDefault();
-    console.log(this.state.email);
-    console.log(this.state.nom);
+  handleSubmit() {
+    console.log("submited");
+    const password=this.state.password;
+    const comnfirmation=this.state.confirmation;
+    if(this.state.password === this.state.confirmation) {
+      // sendDetailsToServer() 
+      
+     console.log('Votre inscription a bie été entregistrée'); 
+    } 
+     else
+    {
+      console.log('Passwords do not match');
+      this.setState({
+        err:'Passwords do not match'
+        });
+    }
     
-    // props.history.push('/login')
+  
 
+  // const sendDetailsToServer = ()=>{
+  //   if(state.email.length && state.password.length){
+  //     props.showError(null);
+  //     const payload={
+  //       "email":this.state.email,
+  //       "password":this.state.password,
+
+  //     }
+  //     axios.post(url/compnents,payload)
+  //     .then(response=>{
+  //       if(response.status===200){
+  //         console.log('regustration copmlte');
+  //         redirectToHome();
+  //         props.showError(null)
+  //       }
+  //       else{
+  //         props.showError('some thing Wrong');
+  //     }
+      
+  //     })
+  //     .catch(err=>{
+  //       console.log(err);
+  //     });
+  //   }
+  //   else{
+  //     props.showError('enter valid password')
+  //   }
+
+
+  // }
   }
   render(){
           return(
-                <div>        
+                <div> 
+                  {this.state.err !='' ? this.state.err:''}       
                   <Form onSubmit={this.handleSubmit}>
                      <h1>Inscription </h1>
                       <Form.Group controlId="formGroupEmail" >
@@ -49,7 +91,7 @@ class Register extends React.Component{
                       </Form.Group>
                       <Form.Group controlId="formGroupEmail">
                           <Form.Label>Nom</Form.Label>
-                          <Form.Control type="text" name='lasName' placeholder="Votre nom" value={this.state.lastName} onChange={this.handleChange} required/>
+                          <Form.Control type="text" name='lastName' placeholder="Votre nom" value={this.state.lastName} onChange={this.handleChange} required/>
                       </Form.Group>
                       <Form.Group controlId="formGroupPassword">
                           <Form.Label >Mot de pass</Form.Label>
