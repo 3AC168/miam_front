@@ -26,11 +26,13 @@ class Utilisateur extends Component {
                     </InputGroup.Append>
                 </InputGroup>
                 
-                <Button variant="info" type="submit">Calculer le menu</Button>
+                <Button variant="link" type="submit"><a href="/menu">Calculer le menu</a></Button>
 
                 <hr /> 
 
-                <UserInfo />             
+                <p>Ajouter d'ingrédients :</p>
+                <Button variant="outline-secondary"><a href="/add">Ajouter des ingrédients</a></Button>
+                {/*<UserInfo />*/}             
 
             </div> 
         );

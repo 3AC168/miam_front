@@ -18,6 +18,7 @@ import Utilisateur from './components/core/Utilisateur';
 import Ingredients from './components/form/select/Ingredients';
 //import Ingredients from './public/json/ingredients.json'
 import Add from './components/ingredients/Add';
+//import UserList from './components/core/UserList';
 
 
 class App extends Component {
@@ -40,8 +41,9 @@ class App extends Component {
                     <Route path="/register" component={Register} />
                     <Route path="/logout" component={Login} />
                     <Route path="/enregistrer/:email" component={Enregistrer} />*/}
-                    <Route path="/userinfo" component={UserInfo} />
+                    <Route path="/userinfo" component={UserInfo} />                    
                     <Route path="/add" component={Add} />
+                    {/*<Route path="/userlist" component={UserList} />*/}
                     <Route path="/utilisateur" component={Utilisateur} />                    
               </Switch>              
           </div>        
