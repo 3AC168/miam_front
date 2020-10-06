@@ -59,35 +59,16 @@ class App extends Component {
           <div>
             <div className="container-fluid" >
                 <Navigation />
-                {/* <Card style={{ width: '18rem' }}>
-                    <Card.Header>Liste des ingrédients :</Card.Header>
-                      <ListGroup variant="flush">
-                        <ul>
-                          {list.map((list, id) => {
-                            return (
-                              <li key = {list.id}>
-                                {list.ingredientName} : {list.quantity}  {list.unity} 
-                              </li>
-                            );
-                          })}
-                        </ul>
-                      </ListGroup>
-                </Card>
-                <Add /> */}
-                {/*<Add />
-                <Add/>*/}
-                {/*<UserInfo />*/}
-                {/*<Utilisateur />*/}
             </div>
                 <Switch>
                   <Route exact path="/" component={Home} />
                     <Route path="/login" component={Login} />
                     <Route path="/register" component={Register} />
-                    <Route path="/logout" component={Utilisateur} />
-                    <Route path="/Welcome" component={Welcome } />
+                    <Route path="/utilisateur" component={Utilisateur} />
+                    <Route path="/welcome" component={Welcome } />
                     <Route path="/userinfo" component={UserInfo} />
                     <Route path="/ingredients" component={Ingredients} />
-                    <Route path="/logout" component={Register} />
+                    {/* <Route path="/logout" component={Register} /> */}
                     <Route path="/add" component={Add} />
                 </Switch>
           

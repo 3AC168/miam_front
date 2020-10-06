@@ -29,7 +29,7 @@ class Login extends React.Component {
     const password=this.state.password;
     const email=this.state.email;
     if(this.state.email===email && this.state.password===password){
-      this.props.history.push('/welcome/' + email);
+      this.props.history.push('/userinfo/' + email);
     }
     else{
       this.setState({
@@ -46,12 +46,12 @@ class Login extends React.Component {
           <Form.Group controlId="formGroupEmail">
             <Form.Label>Email address</Form.Label>
             <Form.Control type="email" name="email" placeholder="Enter email" 
-              value={this.state.email} onChange={(event) => this.handleChange(event)} />
+              value={this.state.email} onChange={(event) => this.handleChange(event)} required />
           </Form.Group>
           <Form.Group controlId="formGroupPassword">
             <Form.Label >Password</Form.Label>
             <Form.Control type="password" name='password' placeholder="Password"
-              value={this.state.password} onChange={this.handleChange} />
+              value={this.state.password} onChange={this.handleChange} required/>
           </Form.Group>
           <Button variant="primary" type="submit" onSubmit={this.handleSubmit}> Se connecter </Button>
         </Form>

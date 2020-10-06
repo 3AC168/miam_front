@@ -1,6 +1,7 @@
 import React from 'react';
-// import axios from 'axios';
-import Welcome from './Welcome';
+// // import axios from 'axios';
+// import Welcome from './Welcome';
+import { Redirect } from "react-router-dom";
 import {Form,Button}from 'react-bootstrap';
 class Register extends React.Component{
   constructor(props){
@@ -28,21 +29,23 @@ class Register extends React.Component{
   }
   handleSubmit() {
     console.log("submited");
-    const password=this.state.password;
-    const confirmation=this.state.confirmation;
-    if(password === confirmation) {
-      return <Welcome />
-      // sendDetailsToServer() 
+    this.props.history.push('/welcome');
+   
+    // const password=this.state.password;
+    // const confirmation=this.state.confirmation;
+    // if(password === confirmation) {
+    //   this.props.history.push('/welcome');
+    //   // sendDetailsToServer() 
       
-     console.log('Votre inscription a bie été entregistrée'); 
-    } 
-     else
-    {
-      console.log('Passwords do not match');
-      this.setState({
-        err:'Passwords do not match'
-        });
-    }
+    //  console.log('Votre inscription a bie été entregistrée'); 
+    // } 
+    //  else
+    // {
+    //   console.log('Passwords do not match');
+    //   this.setState({
+    //     err:'Passwords do not match'
+    //     });
+    // }
     
   
 
@@ -78,6 +81,8 @@ class Register extends React.Component{
   // }
   }
   render(){
+    
+  
           return(
                 <div> 
                   {this.state.err !=='' ? this.state.err:''}       
