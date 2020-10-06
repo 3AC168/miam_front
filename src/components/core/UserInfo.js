@@ -27,6 +27,9 @@ class Userinfo extends Component {
         };*/}
     }
 
+    logout(){
+        this.props.history.push('/add');
+    }
     render(){ 
         {/*const {
             list
@@ -51,8 +54,7 @@ class Userinfo extends Component {
                     </Card>*/}
                 {/*<Ingredients />*/}
                 <p>Ajouter d'ingrédients :</p>
-                <Button variant="outline-secondary"><a href="/add">Ajouter des ingrédients</a></Button>
-                
+                <Button variant="outline-secondary" onClick={this.logout.bind(this)}>Ajouter des ingrédients</Button>
             </div>
         )
     }

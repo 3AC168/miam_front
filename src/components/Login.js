@@ -1,13 +1,12 @@
 import React from 'react';
 // import {Link} from 'react-router-dom';
 // import Welcome from './Welcome';
-import Form from 'react-bootstrap/Form';
-import Button from 'react-bootstrap/Button';
+import {Form, Button} from 'react-bootstrap';
 class Login extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      email: '',
+      username: '',
       password: '',
       err:''
     };
@@ -25,17 +24,21 @@ class Login extends React.Component {
   handleSubmit(event) {
     
     event.preventDefault();
-    console.log(this.state.email,this.state.password);
+    console.log(this.state.username,this.state.password);
     const password=this.state.password;
-    const email=this.state.email;
-    if(this.state.email===email && this.state.password===password){
-      this.props.history.push('/welcome/' + email);
-    }
-    else{
-      this.setState({
-      err:"This is not valid",
-      })
-    }
+    const username=this.state.username;
+    fetch('http://localhost:3003/users', {password,username})
+    .then(res => res.json())
+    .then((json) => {
+        console.log(json.success);
+        if(json.success){
+          this.props.history.push('/userinfo/' + username);
+        }else{
+          this.setState({
+          err:"This is not valid",
+          });
+        }
+      });
     
   }
   render() {
@@ -43,15 +46,15 @@ class Login extends React.Component {
       <div>
         {this.state.err !=='' ? this.state.err:''}
         <Form method="post" onSubmit={this.handleSubmit} >
-          <Form.Group controlId="formGroupEmail">
-            <Form.Label>Email address</Form.Label>
-            <Form.Control type="email" name="email" placeholder="Enter email" 
-              value={this.state.email} onChange={(event) => this.handleChange(event)} />
+          <Form.Group controlId="formHorizontalEmail">
+            <Form.Label>Username</Form.Label>
+            <Form.Control type="text" name="username" placeholder="Enter sername" 
+              value={this.state.username} onChange={(event) => this.handleChange(event)} required />
           </Form.Group>
-          <Form.Group controlId="formGroupPassword">
+        <Form.Group controlId="formHorizontalPassword">
             <Form.Label >Password</Form.Label>
             <Form.Control type="password" name='password' placeholder="Password"
-              value={this.state.password} onChange={this.handleChange} />
+              value={this.state.password} onChange={this.handleChange} required/>
           </Form.Group>
           <Button variant="primary" type="submit" onSubmit={this.handleSubmit}> Se connecter </Button>
         </Form>

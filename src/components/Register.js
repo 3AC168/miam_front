@@ -1,6 +1,7 @@
 import React from 'react';
-// import axios from 'axios';
-import Welcome from './Welcome';
+// // import axios from 'axios';
+// import Welcome from './Welcome';
+// import { Redirect } from "react-router-dom";
 import {Form,Button}from 'react-bootstrap';
 class Register extends React.Component{
   constructor(props){
@@ -21,62 +22,33 @@ class Register extends React.Component{
     
   }
   handleChange(event){
-    event.preventDefault();
+   
     this.setState({
       [event.target.name]:event.target.value,
     })
   }
-  handleSubmit() {
+  handleSubmit(event) {
     console.log("submited");
+     event.preventDefault();
+    console.log(this.state.confirmation,this.state.password);
     const password=this.state.password;
     const confirmation=this.state.confirmation;
-    if(password === confirmation) {
-      return <Welcome />
-      // sendDetailsToServer() 
-      
-     console.log('Votre inscription a bie été entregistrée'); 
-    } 
-     else
-    {
-      console.log('Passwords do not match');
-      this.setState({
-        err:'Passwords do not match'
-        });
-    }
+    fetch('http://localhost:3003/users', {password,confirmation})
+    .then(res => res.json())
+    .then((json) => {
+        console.log(json);
+        if(json.success){
+          this.props.history.push('/welcome');
+        }else{
+          this.setState({
+          err:"you are not registered",
+          });
+        }
+      });
     
-  
-
-  // const sendDetailsToServer = ()=>{
-  //   if(state.email.length && state.password.length){
-  //     props.showError(null);
-  //     const payload={
-  //       "email":this.state.email,
-  //       "password":this.state.password,
-
-  //     }
-  //     axios.post('http://localhost:3003/',payload)
-  //     .then(response=>{
-  //       if(response.status===200){
-  //         console.log('regustration copmlte');
-  //         redirectToHome();
-  //         props.showError(null)
-  //       }
-  //       else{
-  //         props.showError('some thing Wrong');
-  //     }
-      
-  //     })
-  //     .catch(err=>{
-  //       console.log(err);
-  //     });
-  //   }
-  //   else{
-  //     props.showError('enter valid password')
-  //   }
-
-
-  // }
   }
+   
+  
   render(){
           return(
                 <div> 
