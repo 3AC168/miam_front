@@ -5,7 +5,7 @@ class Button extends Component {
     render (){
         return(
             <div>
-                <button>-{this.props.list.this.removeList}</button>
+                <button>Supprimer{this.props.list.this.removeList}</button>
             </div>
         );
     }

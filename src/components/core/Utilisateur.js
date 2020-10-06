@@ -12,29 +12,26 @@ class Utilisateur extends Component {
 
     render (){
         return(
-            <div>
-               
+            <div>               
 
-                    <Form.Label>Nombre de personnes :</Form.Label>
-                    <InputGroup className="mb-3">
+                <Form.Label>Nombre de personnes :</Form.Label>
+                <InputGroup className="mb-3">
                     <FormControl
-                    placeholder="Nombre en chiffres"
-                    aria-label="Nombre en chiffres"
-                    aria-describedby="basic-addon2"
+                        placeholder="Nombre en chiffres"
+                        aria-label="Nombre en chiffres"
+                        aria-describedby="basic-addon2"
                     />
                     <InputGroup.Append>
-                    <Button variant="outline-secondary" type="submit">Personne(s)</Button>                    
+                        <Button variant="outline-secondary" type="submit">Personne(s)</Button>                    
                     </InputGroup.Append>
-                    </InputGroup>
+                </InputGroup>
                 
                 <Button variant="info" type="submit">Calculer le menu</Button>
 
                 <hr /> 
 
-                <UserInfo />                
-                             
-               
-                
+                <UserInfo />             
+
             </div> 
         );
     }

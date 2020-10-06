@@ -14,7 +14,7 @@ class Welcome extends React.Component{
               {/* <Navigation /> */}
               {/* <h1>Welcome  {email}</h1> */}
               <h1> votr inscription a  bien été enregistrée</h1>
-              <button onClick={this.logout.bind(this)}>Login</button>
+              <button onClick={this.logout.bind(this)}>Ok</button>
            </div>
           
             

@@ -11,7 +11,8 @@ class Ingredients extends React.Component {
     };
 
     componentDidMount() {
-        const url = 'http://localhost:3003/ingredients';
+        const url = '/json/ingredients.json';
+        //const url = 'http://localhost:3003/ingredients'
         fetch(url)
             .then(res => res.json())
             .then((json) => {

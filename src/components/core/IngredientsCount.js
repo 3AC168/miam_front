@@ -40,8 +40,8 @@ class IngredientsCount extends Component {
                 <Quantities />
                 
                 <Card.Body className="text-center">                        
-                    <Button variant="success" onClick = {this.props.addListFn}>Plus  +</Button> 
-                    <Button variant="danger" onClick = {this.props.removeListFn}>Moins -</Button>
+                    <Button variant="success" onClick = {this.props.addListFn}>Ajouter</Button> 
+                    <Button variant="danger" onClick = {this.props.removeListFn}>Supprimer</Button>
                 </Card.Body>
                 
                 

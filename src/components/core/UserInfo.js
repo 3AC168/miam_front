@@ -3,7 +3,7 @@ import  { Button } from 'react-bootstrap';
 
 class Userinfo extends Component {
     logout(){
-        this.props.history.push('/utilisateur');
+        this.props.history.push('/add');
     }
     render(){
         return(
