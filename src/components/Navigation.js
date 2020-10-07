@@ -26,8 +26,8 @@ class Navigation extends React.Component{
                     </Nav>
                   </Navbar.Collapse>
                 </Navbar>
-            </div>            
-        </div>
+            </div>
+          </div>
       </Router>
     );
   }
