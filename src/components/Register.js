@@ -47,7 +47,25 @@ class Register extends React.Component{
       });
     
   }
-   
+
+  //  axios
+  //  .post('http://localhost:3003/users',
+  //    {
+  //      users:{
+  //        email:email,
+  //        password:pssaword,
+  //        confirmationconfirmation
+  //      }
+
+  //    },
+  //    {withCredentials:true}
+  //  )
+  //  .then(response=>{
+  //    console.log(response);
+  //  })
+  //  .catch(err=>{
+  //   console.log(err);
+  //  })
   
   render(){
           return(

@@ -27,12 +27,6 @@ class Navigation extends React.Component{
                   </Navbar.Collapse>
                 </Navbar>
             </div>
-              <Switch>
-                <Route path="/login" component={Login} />
-                <Route path="/register" component={Register} />
-                <Route path="/userinfo" component={UserInfo} />
-
-              </Switch>
         </div>
       </Router>
     );
