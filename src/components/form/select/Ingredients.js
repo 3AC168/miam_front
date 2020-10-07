@@ -36,7 +36,7 @@ class Ingredients extends React.Component {
                             })}
                         </Form.Control>                         
                  
-                </Form.Group>                
+                </Form.Group>              
                 
                 
                 
