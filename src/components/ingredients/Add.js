@@ -2,13 +2,20 @@ import React, { Component } from 'react';
 import { Card, Button, Form, ListGroup, Modal } from 'react-bootstrap';
 import IngredientsCount from '../core/IngredientsCount';
 import Ingredients from '../form/select/Ingredients'; 
+import Message from '../core/Message';
 
 class Add extends Component {
     constructor(props){
         super(props);
-        /*this.addList = this.addList.blind(this);
-        this.removeList = this.removeList.blind(this);*/
-        
+        this.state = {
+            list: [],  
+            input: '',
+            unity: ''
+
+        }
+    //    this.addList = this.addList.blind(this);
+    //    this.removeList = this.removeList.blind(this);
+        /*
         this.state = {
             list: [{
                 ingredientId: 'abc',
@@ -26,30 +33,32 @@ class Add extends Component {
                 unity: 'kilo',
                 quantity: 1
             }]
-        }; 
+        }; */
     }
-
-    /*addList = () => {
+/*
+    onChangeInput = (evt) => {
+        const input = evt.target.value
         this.setState({
-          list: this.state.list + this.state.list.id
+          input
         });
-        this.addList = this.addList.blind(this);
+        
       }
     
-      removeList = () => {
-        this.setState({
-          list: this.state.list - this.state.list.list.id
+    onChangeUnity = (evt) => {
+          const unity = evt.target.value
+          this.setState({
+          unity
         });
-        this.removeList = this.removeList.blind(this);
-      }
-    */
+        
+      }*/
+    
 
     render() {
         const {
             list
         } = this.state;
-        console.log('this.state.list', this.state.list);
-        console.log('list[0]', list[0]);
+        //console.log('this.state.list', this.state.list);
+        //console.log('list[0]', list[0]);
         return(
             <div className="container-fluid">
                 <Card style={{ width: '18rem' }}>
@@ -65,9 +74,14 @@ class Add extends Component {
                         })}
                     </ul>
                     </ListGroup>
-                </Card>
+                    </Card>
                 <Ingredients />
                 <IngredientsCount />
+                {/*<Button variant="outline-secondary"><a href="/utilisateur">Suivant</a></Button>*/}
+
+                <Card.Body className="text-center">   
+                <Message />
+                </Card.Body>
             </div>
 
         );

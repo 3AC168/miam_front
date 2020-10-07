@@ -19,6 +19,7 @@ import Menu1 from './components/menu/Menu1';
 // import Ingredients from './components/form/select/Ingredients';
 //import Ingredients from './public/json/ingredients.json'
 import Add from './components/ingredients/Add';
+//import UserList from './components/core/UserList';
 
 
 class App extends Component {
@@ -44,6 +45,7 @@ class App extends Component {
                     <Route path="/welcome" component={Welcome} />
                     <Route path="/userinfo" component={UserInfo} />
                     <Route path="/add" component={Add}/>
+                    {/*<Route path="/userlist" component={UserList} />*/}
                     <Route path="/utilisateur" component={Utilisateur} />  
                     <Route  path="/menu1" component={Menu1} />     
               </Switch>              

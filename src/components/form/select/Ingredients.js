@@ -11,12 +11,11 @@ class Ingredients extends React.Component {
     };
 
     componentDidMount() {
-        const url = '/json/ingredients.json';
-        //const url = 'http://localhost:3003/ingredients'
+        const url = 'http://localhost:3003/ingredients'
         fetch(url)
             .then(res => res.json())
             .then((json) => {
-                console.log(json);
+                console.log(json.data);
                 this.setState({
                     list: json.data
                 })
@@ -43,24 +42,6 @@ class Ingredients extends React.Component {
                 
                 
 
-               {/*<Button variant="primary" onClick={this.handleShow}>
-                    Launch demo modal
-                 </Button>*/}
-
-                {/*<Modal show={this.state.show} onHide={this.state.handleClose}>
-                    <Modal.Header closeButton>
-                    <Modal.Title>Modal heading</Modal.Title>
-                    </Modal.Header>
-                    <Modal.Body>Woohoo, you're reading this text in a modal!</Modal.Body>
-                    <Modal.Footer>
-                    <Button variant="secondary" onClick={this.handleClose}>
-                        Close
-                    </Button>
-                    <Button variant="primary" onClick={this.handleClose}>
-                        Save Changes
-                    </Button>
-                    </Modal.Footer>
-                </Modal>*/}
             </div>
         );
     }
