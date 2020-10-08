@@ -5,10 +5,15 @@ import Quantities from '../../core/Quantities';
 
 
 class Ingredients extends React.Component {
+    constructor(props){
+        super(props);
+        this.state = {
+            list: []
+        };
+        this.onChange=this.onChange.bind(this);
+    }
 
-    state = {
-        list: []
-    };
+   
 
     componentDidMount() {
         const url = 'http://localhost:3003/ingredients'
@@ -22,20 +27,34 @@ class Ingredients extends React.Component {
             })
     }
 
+    onChange(evt) {
+        console.log('Ingredients#onChange evt', evt);
+        console.log('Ingredients#onChange evt', evt.target.value);
+
+        const item = this.state.list.find(ingredient => {
+            return ingredient._id === evt.target.value;
+        });
+
+        console.log('Ingredients#onChange item', item);
+        this.props.onChange(item);
+
+
+    }
+
     render() {
         return ( 
             <div>
                 
                 <Form.Group controlId="exampleForm.ControlSelect1">
                     <Form.Label>Sélectionner des ingrédients :</Form.Label>
-                        <Form.Control as="select">
-                            {this.state.list.map((el) => {
+                        <Form.Control as="select" onChange={this.onChange}>
+                            <option></option>
+                            {this.state.list.map((el,key) => {
                                 return (
-                                <option key={el._id}>{el.name}</option>
+                                <option key={key} value={el._id}>{el.name}</option>
                                 );
                             })}
-                        </Form.Control>                         
-                 
+                        </Form.Control>                        
                 </Form.Group>                
                 
                 
