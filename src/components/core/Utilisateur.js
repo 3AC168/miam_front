@@ -5,10 +5,26 @@ import Quantities from './Quantities';
 
 
 class Utilisateur extends Component {
-    state = {
-        form: true,
-    };
+    constructor(props){
+        super(props);
+        this.state = {
+            form: true,
+            input: ''
+        };
+        this.onChangeInput = this.onChangeInput.bind(this);
+    }
 
+    onChangeInput = (evt) => {
+        console.log('cmp/Add#onChangeInput evt.target.value', evt.target.value);
+        const input = evt.target.value
+        this.setState({
+          input
+        });        
+    }
+    /*
+    componentDidMount(){
+        Quantities / 4 * inputValue
+    }*/
 
     render (){
         return(
@@ -19,7 +35,7 @@ class Utilisateur extends Component {
                     <FormControl
                         placeholder="Nombre en chiffres"
                         aria-label="Nombre en chiffres"
-                        aria-describedby="basic-addon2"
+                        aria-describedby="basic-addon2" onChange={this.onChangeInput}
                     />
                     <InputGroup.Append>
                         <Button variant="outline-secondary" type="submit">Personne(s)</Button>                    

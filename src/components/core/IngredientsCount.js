@@ -1,29 +1,69 @@
 import React, { Component } from 'react';
-import { Card, Button,Modal } from 'react-bootstrap';
+import { Card, Button, FormControl, InputGroup } from 'react-bootstrap';
 import Ingredients from '../form/select/Ingredients';
-import Quantities from './Quantities';
+//import Quantities from './Quantities';
 
 class IngredientsCount extends Component {
+    constructor(props){
+        super(props);
+        this.state = {
+            list: [],  
+            ingredientName: '',
+            input: '',
+            unity: 0
+        }
+
+        this.onChangeInput = this.onChangeInput.bind(this);
+        this.onChangeUnity = this.onChangeUnity.bind(this);
+        this.onSubmit = this.onSubmit.bind(this);  
+    }
+        /*
+        this.state = {
+            list: [{
+                ingredientId: 'abc',
+                ingredientName: 'Agneau',
+                unity: 'unité',
+                quantity: 1
+            }, {
+                ingredientId: 'def',
+                ingredientName: 'Boeuf',
+                unity: 'litre',
+                quantity: 1
+            }, {
+                ingredientId: 'ghi',
+                ingredientName: 'Porc',
+                unity: 'kilo',
+                quantity: 1
+            }]
+        }; */
     
-    state = {
-        form: true,
-        show: false, // Alerte show
-        handleClose: false,
-        handleShow: true
-    };
-
-
-
-    handleClose() {
+    
+    onChangeInput = (evt) => {
+        const input = evt.target.value
         this.setState({
-            handleClose: true
+          input
         });
-    };
-    handleShow() {
-        this.setState({
-            handleShow: false   
+        console.log('input', this.state.input);        
+      }
+    
+    onChangeUnity = (evt) => {
+          const unity = evt.target.value
+          this.setState({
+          unity
         });
-    };
+        console.log('Unity', this.state.unity);   
+      }
+      
+      onSubmit() {
+          const {
+              input,
+              unity
+          } =this.state;
+          console.log();
+          this.props.onSubmit(input, unity)
+      } 
+      
+  
 
     render() {
         return(
@@ -37,35 +77,31 @@ class IngredientsCount extends Component {
 
                 {/*<hr />*/} 
 
-                <Quantities />
-                
-                <Card.Body className="text-center">                        
-                    <Button variant="success" onClick = {this.props.addListFn}>Ajouter</Button> 
-                    <Button variant="danger" onClick = {this.props.removeListFn}>Supprimer</Button>
-                </Card.Body>
-                
-                
-                
-                                
+                {/*<Quantities />*/}
+                <InputGroup className="mb-3">
+                <FormControl
+                placeholder="Quantities en chiffres"
+                aria-label="Quantities en chiffres"
+                aria-describedby="basic-addon2"
+                />
+                <InputGroup.Append>
+                <Button variant="outline-secondary" type="submit">Kilo</Button>
+                <Button variant="outline-secondary" type="submit">Litre</Button>
+                <Button variant="outline-secondary" type="submit">Unité</Button>
+                </InputGroup.Append>
+                </InputGroup>             
+                {/*
+                <input FormControl
+                    placeholder="Quantities en chiffres"
+                onChange={this.onChangeInput} /> */}
 
-                {/*<Button variant="primary" onClick={this.handleShow}>
-                    Launch demo modal
-                 </Button>*/}
- 
-                {/*<Modal show={this.state.show} onHide={this.state.handleClose}>
-                    <Modal.Header closeButton>
-                    <Modal.Title>Modal heading</Modal.Title>
-                    </Modal.Header>
-                    <Modal.Body>Woohoo, you're reading this text in a modal!</Modal.Body>
-                    <Modal.Footer>
-                    <Button variant="secondary" onClick={this.handleClose}>
-                        Close
-                    </Button>
-                    <Button variant="primary" onClick={this.handleClose}>
-                        Save Changes
-                    </Button>
-                    </Modal.Footer>
-                </Modal>*/}
+                <Card.Body className="text-center">                        
+                    <Button variant="success" onClick = {this.props.onSubmit}>Ajouter</Button> 
+                    <Button variant="danger" onClick = {this.props.removeListFn}>Supprimer</Button>
+                </Card.Body>             
+                
+                                                
+
             </div>
         );
     }

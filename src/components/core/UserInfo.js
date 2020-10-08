@@ -26,7 +26,7 @@ class Userinfo extends Component {
             }]
         };*/}
     }
-
+    
     logout(){
         this.props.history.push('/add');
     }
@@ -35,7 +35,7 @@ class Userinfo extends Component {
             list
         } = this.state;
         console.log('this.state.list', this.state.list);
-    console.log('list[0]', list[0]);*/}
+        console.log('list[0]', list[0]);*/}
         return(
             <div className="container-fluid">
                 {/*<Card style={{ width: '18rem' }}>
@@ -55,6 +55,7 @@ class Userinfo extends Component {
                 {/*<Ingredients />*/}
                 <p>Ajouter d'ingrédients :</p>
                 <Button variant="outline-secondary" onClick={this.logout.bind(this)}>Ajouter des ingrédients</Button>
+                {/*<Button variant="outline-secondary"><a href="/add">Ajouter des ingrédients</a></Button>*/}
             </div>
         )
     }
