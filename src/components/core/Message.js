@@ -28,7 +28,7 @@ class Message extends Component {
 export default Message; */
 
     
-   
+
 //react-modal
 class Message extends React.Component {
     constructor () {
@@ -60,8 +60,8 @@ class Message extends React.Component {
                     onRequestClose={this.handleCloseModal}
                     shouldCloseOnOverlayClick={false}
                 >
-                <p>Les modifications ont été enrégistrées.</p>
-                <p>Voulez-vous revenir à la page principale ?</p>
+                <h5>Les modifications ont été enrégistrées.</h5>
+                <h6>Voulez-vous revenir à la page principale ?</h6>
                 <button onClick={this.handleCloseModal}><a href="/userinfo">Oui</a></button>
                 <button onClick={this.handleCloseModal}><a href="/utilisateur">Non, continuer.</a></button>
                 </Modal>                 
@@ -75,15 +75,14 @@ export default Message;
 /*
     const customStyles = {
         content : {
-          top                   : '50%',
+          top                   : '45%',
           left                  : '50%',
           right                 : 'auto',
-          bottom                : 'auto',
+          bottom                : '0%',
           marginRight           : '-50%',
           transform             : 'translate(-50%, -50%)'
         }
-    }; 
-      
+    };       
  
       function Message(){
         var subtitle;
@@ -94,7 +93,7 @@ export default Message;
        
         function afterOpenModal() {
           // references are now sync'd and can be accessed.
-          subtitle.style.color = '#f00';
+          subtitle.style.color = '#0080ff';
         }
        
         function closeModal(){
@@ -103,7 +102,7 @@ export default Message;
        
           return (
             <div>
-              <button onClick={openModal}>Open Modal</button>
+              <button onClick={openModal}>Infos</button>
               <Modal
                 isOpen={modalIsOpen}
                 onAfterOpen={afterOpenModal}
@@ -112,19 +111,16 @@ export default Message;
                 contentLabel="Example Modal"
               >
        
-                <h2 ref={_subtitle => (subtitle = _subtitle)}>Hello</h2>
-                <button onClick={closeModal}>close</button>
-                <div>I am a modal</div>
+                <h5 ref={_subtitle => (subtitle = _subtitle)}>Les modifications ont été enrégistrées.</h5>               
+                <p>Voulez-vous revenir à la page principle ?</p>
                 <form>
-                  <input />
-                  <button>tab navigation</button>
-                  <button>stays</button>
-                  <button>inside</button>
-                  <button>the modal</button>
+                  
+                <button onClick={closeModal}><a href="/userinfo">Oui</a></button>
+                <button onClick={closeModal}><a href="/utilisateur">Non, continuer.</a></button>              
                 </form>
               </Modal>
             </div>
           );
       } 
       
-export default Message; */
+    export default Message; */

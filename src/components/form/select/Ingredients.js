@@ -54,8 +54,9 @@ class Ingredients extends React.Component {
                                 <option key={key} value={el._id} className="font-weight-bolder text-dark">{el.name}</option>
                                 );
                             })}
-                        </Form.Control>                        
-                </Form.Group>                
+                        </Form.Control>                         
+                 
+                </Form.Group>              
                 
                 
                 
