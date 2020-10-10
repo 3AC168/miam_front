@@ -5,10 +5,13 @@ import Quantities from '../../core/Quantities';
 
 
 class Ingredients extends React.Component {
-
-    state = {
-        list: []
+    constructor(props){            //Cette partie est ajouté
+        super(props);
+        this.state = {
+         list: []
     };
+    this.onChange=this.onChange.bind(this);
+}
 
     componentDidMount() {
         //const url = '/json/ingredients.json';
@@ -21,6 +24,21 @@ class Ingredients extends React.Component {
                     list: json.data
                 })
             })
+    }
+
+    // Cette partie est ajouté
+    onChange(evt) {
+        console.log('Ingredients#onChange evt', evt);
+        console.log('Ingredients#onChange evt', evt.target.value);
+
+        const item = this.state.list.find(ingredient => {
+            return ingredient._id === evt.target.value;
+        });
+
+        console.log('Ingredients#onChange item', item);
+        this.props.onChange(item);
+
+
     }
 
     render() {
