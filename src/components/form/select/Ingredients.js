@@ -46,11 +46,12 @@ class Ingredients extends React.Component {
             <div>
                 
                 <Form.Group controlId="exampleForm.ControlSelect1">
-                    <Form.Label>Sélectionner des ingrédients :</Form.Label>
-                        <Form.Control as="select">
-                            {this.state.list.map((el) => {
+                    <Form.Label className="font-weight-bolder text-dark">Sélectionner des ingrédients :</Form.Label>
+                        <Form.Control as="select" onChange={this.onChange}>
+                            <option></option>
+                            {this.state.list.map((el,key) => {
                                 return (
-                                <option key={el._id}>{el.name}</option>
+                                <option key={key} value={el._id} className="font-weight-bolder text-dark">{el.name}</option>
                                 );
                             })}
                         </Form.Control>                         
