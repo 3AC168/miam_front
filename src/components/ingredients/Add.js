@@ -1,20 +1,13 @@
 import React, { Component } from 'react';
-<<<<<<< HEAD
 import { Card, Button, Form, ListGroup, Modal,Container,Col,Row } from 'react-bootstrap';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import IngredientsCount from '../core/IngredientsCount';
 import Ingredients from '../form/select/Ingredients'; 
-=======
-import { Card, Button, Form, FormControl, InputGroup, ListGroup, Modal } from 'react-bootstrap';
-//import IngredientsCount from '../core/IngredientsCount';
-//import Ingredients from '../form/select/Ingredients'; 
->>>>>>> f372796210397667aff00e1ac0b88136cd885e29
 import Message from '../core/Message';
 
 class Add extends Component {
     constructor(props){
         super(props);
-<<<<<<< HEAD
         this.state = {
             ingredient:'',
             quantity:'',
@@ -83,8 +76,7 @@ class Add extends Component {
             };
 
             list.push(ingredientObject);
-=======
-          this.state = {
+        {/* this.state = {
             list: [],  
             input: '',
             unity: ''
@@ -93,36 +85,36 @@ class Add extends Component {
         this.onChangeInput = this.onChangeInput.bind(this);
         this.onClick = this.onClick.bind(this);
         this.onSubmit = this.onSubmit.bind(this);  
-    }
+    
         
     
     
-    onChangeInput = (evt) => {
-        console.log('cmp/Add#onChangeInput evt.target.value', evt.target.value);
-        const input = evt.target.value
-        this.setState({
-          input
-        });
+        onChangeInput = (evt) => {
+            console.log('cmp/Add#onChangeInput evt.target.value', evt.target.value);
+            const input = evt.target.value
+            this.setState({
+            input
+            });
         
-    }
+        }
     
-    onClick = (evt) => {
-        console.log('cmp/Add#onChangeUnity evt.target.value', evt.target.value);
-        const unity = evt.target.value
-        this.setState({
-        unity
-        });
-        console.log('Unity', this.state.unity); 
-    }
+        onClick = (evt) => {
+            console.log('cmp/Add#onChangeUnity evt.target.value', evt.target.value);
+            const unity = evt.target.value
+            this.setState({
+            unity
+            });
+            console.log('Unity', this.state.unity); 
+        }
       
-    onSubmit(input, unity) {
-        console.log('cmp/Add#onSubmit');
-        console.log('cmp/Add#onSubmit this.state', this.state);
-        /*const {
-            input,
-            unity            
-        } =this.state;*/
-        const items = this.state.items;
+        onSubmit(input, unity) {
+            console.log('cmp/Add#onSubmit');
+            console.log('cmp/Add#onSubmit this.state', this.state);
+            /*const {
+                input,
+                unity            
+            } =this.state;*/
+        {/* const items = this.state.items;
 
         items.push({
             input,
@@ -132,11 +124,11 @@ class Add extends Component {
             items,
         })
         //this.props.onSubmit(input, unity)
-    }
+        }
       
 
      //Pour recupérer la liste des ingrédients en JSON venu de back-end (base de donnée)
-    componentDidMount() {              
+        componentDidMount() {              
         const url = 'http://localhost:3003/ingredients'
         fetch(url)
             .then(res => res.json())
@@ -146,10 +138,10 @@ class Add extends Component {
                     list: json.data
                 })
             })
+        }  */}
+        
     }
->>>>>>> f372796210397667aff00e1ac0b88136cd885e29
-
-            this.setState({
+            this.setState({ 
                 list
             });
 
@@ -180,9 +172,7 @@ class Add extends Component {
                 // if (err) {
                 // console.log('err', err);
                 // return;
-            });
-
-        
+            });         
             
 
        }
@@ -200,7 +190,6 @@ class Add extends Component {
             unity
         } = this.state;
         return(
-<<<<<<< HEAD
             <div className="container-fluid"className= "bg-primary text-white m-5">
                 <Container >
                     <Row xs={1} md={2}>
@@ -245,15 +234,18 @@ class Add extends Component {
                                         
                                         
                                         );
-                                })}
+                                    })}
                             </ul>
                         </Col>
                     </Row>
+                    <Card.Body className="text-center">   
+                        <Message />
+                    </Card.Body>
                 </Container>
-=======
-            <div className="container-fluid">
-                {/*Pour afficher les ingrédients séléctionnés*/}
-                <Card style={{ width: '18rem' }}>
+            </div>
+        // <div className="container-fluid"> 
+                //*Pour afficher les ingrédients séléctionnés
+        /*     <Card style={{ width: '18rem' }}>
                 <Card.Header>Liste des ingrédients :</Card.Header>
                     <ListGroup variant="flush">
                     <ul>
@@ -266,10 +258,9 @@ class Add extends Component {
                         })}
                     </ul>
                     </ListGroup>
-                    </Card>
-
-                {/*Partie <Ingredients />*/}
-                <Form.Group controlId="exampleForm.ControlSelect1">
+                    </Card> */
+                /*Partie <Ingredients />*/
+                /*<Form.Group controlId="exampleForm.ControlSelect1">
                     <Form.Label>Sélectionner des ingrédients :</Form.Label>
                         <Form.Control as="select" onChange={this.onChangeInput}> 
                             {this.state.list.map((el) => {
@@ -278,10 +269,10 @@ class Add extends Component {
                                 );
                             })}
                         </Form.Control>                       
-                </Form.Group>  
+                    </Form.Group>  */
 
-                {/*Partie <Quantities />*/}
-                <InputGroup className="mb-3">
+                /*Partie <Quantities />*/
+            /* <InputGroup className="mb-3">
                 <FormControl
                 placeholder="Quantities en chiffres"
                 aria-label="Quantities en chiffres"
@@ -292,23 +283,25 @@ class Add extends Component {
                 <Button variant="outline-secondary" type="submit">Litre</Button>
                 <Button variant="outline-secondary" type="submit">Unité</Button>
                 </InputGroup.Append>
-                </InputGroup>  
+                </InputGroup>  */
  
                 
-                {/*Partie <IngredientsCount />*/}
-                <Card.Body className="text-center">                        
+                /*Partie <IngredientsCount />*/
+            /* <Card.Body className="text-center">                        
                     <Button variant="success" onClick = {this.onSubmit}>Ajouter</Button> 
                     <Button variant="danger" removeSelected = {this.removeSelected}>Supprimer</Button>
-                </Card.Body>
+                </Card.Body>  */
 
-                {/*Partie <Message />*/}
-                <Card.Body className="text-center">   
+                /*Partie <Message />*/
+            /* <Card.Body className="text-center">   
                 <Message />
-                </Card.Body>
->>>>>>> f372796210397667aff00e1ac0b88136cd885e29
-            </div>
-
+            </Card.Body> */
+            //</div> 
+        
         );
+    
+        
+    
     }
 }
 
