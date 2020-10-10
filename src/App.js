@@ -7,6 +7,7 @@ import {
   Switch,
 } from 'react-router-dom';
 //import axios from 'axios';
+//import holderjs from 'holderjs';
 import Navigation from './components/Navigation';
 import Home from './components/Home';
 import Register from './components/Register';
@@ -14,7 +15,8 @@ import Welcome from './components/Welcome';
 import Login from './components/Login';
 import UserInfo from './components/core/UserInfo';
 import Utilisateur from './components/core/Utilisateur';
-import Menu1 from './components/menu/Menu1';
+import Menu from './components/menu/Menu';
+import Recette1 from './components/recettes/Recette1';
 //import IngredientsCount from './components/core/IngredientsCount';
 // import Ingredients from './components/form/select/Ingredients';
 //import Ingredients from './public/json/ingredients.json'
@@ -47,7 +49,8 @@ class App extends Component {
                     <Route path="/add" component={Add}/>
                     {/*<Route path="/userlist" component={UserList} />*/}
                     <Route path="/utilisateur" component={Utilisateur} />  
-                    <Route  path="/menu1" component={Menu1} />     
+                    <Route path="/menu" component={Menu} /> 
+                    <Route pathe="/recette1" component={Recette1} />   
               </Switch>              
           </div>        
       </Router>

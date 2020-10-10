@@ -14,7 +14,7 @@ class Add extends Component {
         }
         
         this.onChangeInput = this.onChangeInput.bind(this);
-        this.onChangeUnity = this.onChangeUnity.bind(this);
+        this.onClick = this.onClick.bind(this);
         this.onSubmit = this.onSubmit.bind(this);  
     }
         
@@ -29,7 +29,7 @@ class Add extends Component {
         
     }
     
-    onChangeUnity = (evt) => {
+    onClick = (evt) => {
         console.log('cmp/Add#onChangeUnity evt.target.value', evt.target.value);
         const unity = evt.target.value
         this.setState({
@@ -38,20 +38,28 @@ class Add extends Component {
         console.log('Unity', this.state.unity); 
     }
       
-    onSubmit() {
+    onSubmit(input, unity) {
         console.log('cmp/Add#onSubmit');
         console.log('cmp/Add#onSubmit this.state', this.state);
-        const {
+        /*const {
+            input,
+            unity            
+        } =this.state;*/
+        const items = this.state.items;
+
+        items.push({
             input,
             unity
-        } =this.state;
-        
-        this.props.onSubmit(input, unity)
+        })       
+        this.setState ({
+            items,
+        })
+        //this.props.onSubmit(input, unity)
     }
       
 
      //Pour recupérer la liste des ingrédients en JSON venu de back-end (base de donnée)
-    componentDidMount() {
+    componentDidMount() {              
         const url = 'http://localhost:3003/ingredients'
         fetch(url)
             .then(res => res.json())
@@ -108,7 +116,7 @@ class Add extends Component {
                 aria-describedby="basic-addon2" onChange={this.onChangeInput}
                 />
                 <InputGroup.Append onChange={this.onChangUnity}>
-                <Button variant="outline-secondary" type="select" onChange={this.onChangeUnity}>Kilo</Button>
+                <Button variant="outline-secondary" type="submit" onClick={this.onClick}>Kilo</Button>
                 <Button variant="outline-secondary" type="submit">Litre</Button>
                 <Button variant="outline-secondary" type="submit">Unité</Button>
                 </InputGroup.Append>

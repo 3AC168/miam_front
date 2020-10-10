@@ -1,5 +1,6 @@
 import React, {Component} from 'react';
 import  {Button, Form, FormControl, InputGroup} from 'react-bootstrap';
+
 import UserInfo from './UserInfo';
 import Quantities from './Quantities';
 
